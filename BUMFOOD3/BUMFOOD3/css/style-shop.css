@@ -1,0 +1,420 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+/* =========================  START-HEADER  ========================= */
+.top-header
+{
+    background: linear-gradient(91.24deg, #FA6400 0%, #FF8A00 100%);
+    display: flex;
+}
+
+.logo
+{
+    padding: 10px 0px 0px 10px;
+}
+
+.logo img
+{
+    width: 70%;
+}
+
+.chooses ul
+{
+    display: flex;
+    padding: 15px 0px 10px 0px;
+}
+
+.chooses li a
+{
+    font-size: 20px;
+    margin-right: 20px;
+    color: white;
+    transition: 0.3s;
+}
+
+.chooses li a:hover
+{
+    color: brown;
+}
+
+.search-bar
+{
+    width: 600px;
+    height: 35px;
+    display: flex;
+    cursor: pointer;
+    margin: 13px 0px 0px 50px;
+    padding: 10px 20px;
+    background:#FFFFFF;
+    border-radius: 30px;
+    align-items: center;
+    /* box-shadow: 0 10px 25px rgba(0,0,0,0.3); */
+}
+
+.search-bar input
+{
+    width: 550px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+}
+
+.search-bar i
+{
+    color: brown;
+    font-size: 20px;
+    padding: 5px 0px 5px 0px;
+}
+
+.others
+{
+    display: flex;
+    padding: 15px 0px 15px 120px ;
+}
+
+.others a i
+{
+    font-size: 30px;
+    margin-left: 20px;
+    color: white;
+    transition: 0.3s;
+}
+
+.others a i:hover
+{
+    color: brown;
+}
+
+.bottom-header
+{
+    left: 0;
+    display: flex;
+}
+
+
+
+.banner img
+{
+    height: 400px;
+    width: 700px;
+    margin: 30px 0px 0px 60px;
+    border-radius: 30px;
+}
+
+.store-info 
+{
+    margin-left:20px;
+    padding-top: 30px;
+    padding-left: 20px;
+    display: list-item;
+    grid-template-rows: 50px;
+}
+.store-name{
+    font-size: 30px;
+}
+.store-address{
+    font-size: 20px;
+}
+.store-time{
+    font-size: 20px;
+}
+
+.store-info a
+{
+    color: black;
+}
+
+.coupons-head-title
+{
+    width: 230px;
+    margin: 20px 0px 0px 50px;
+    padding: 15px 15px 15px 35px;
+    background: #FA6400;
+    color: #FFFFFF;
+    border-radius: 50px 0px 0px 50px;
+}
+/* =========================  END-HEADER  ========================= */
+/* =========================  START-COUPON  ========================= */
+.container
+{
+    width: 1000px;
+    height: 400px;
+    margin: 20px 80px;
+
+}
+
+.list
+{
+    display: grid;
+    grid-template-columns: 200px 200px ;
+}
+
+.shop-coupons
+{
+    text-align: center;
+    position: relative;
+    background-color: #FAFAFA;
+    border: #FA6400 solid 2px;
+    padding: 20px;
+    margin: 10px 5px 10px 5px;
+    transition: 0.3s;
+}
+.shop-coupons-img img{
+    width: 150px;
+    height: 150px;
+}
+.shop-coupons:hover
+{
+    transform: translateY(-10px);
+}
+/* =========================  END-COUPON  ========================= */
+/* =========================  START-CHOOSES-INFO  ========================= */
+.chooses-info
+{
+    align-items: center;
+    margin-left: 105px;
+}
+
+.chooses-info a
+{
+    margin-left: 40px;
+    font-size: 22px;
+    color: #FA6400;
+    transition: 0.3s;
+}
+
+.chooses-info i
+{
+    width: 30px;
+    text-align: center;
+}
+
+.chooses-info a:hover
+{
+    color: brown;
+}
+
+.divide
+{
+    width: 88%;
+    height: 3px;
+    background: #FA6400;
+    margin-left: 85px;
+    border-radius: 2px;
+}
+
+/* =========================  END-CHOOSES-INFO  ========================= */
+/* =========================  START-GRID  ========================= */
+.container-2
+{
+    width: 1440px;
+    margin: 20px 80px;
+    display: flex;
+}
+
+.list-2
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+}
+
+.item
+{
+    text-align: center;
+    position: relative;
+    background-color: #eaeaea;
+    padding: 0px;
+    margin: 10px 5px 10px 5px;
+    transition: 0.3s;
+}
+
+.item-add
+{
+    margin-left: 160px;
+    transition: 0.3s;
+}
+
+.item-add i
+{
+    color: #FA6400;
+    font-size: 20px;
+    transition: .3s;
+
+}
+.item-add:hover i
+{
+    color: #3866C0;
+}
+
+.pizza-img img
+{
+    height: 150px;
+    width: 200px;
+}
+
+.item-info-coupon
+{
+    display: flex;
+    margin: 5px 0px 0px 20px;
+}
+
+.item-info-coupon h5
+{
+    padding: 7px 0px 0px 10px;
+}
+/* =========================  START-GRID  ========================= */
+
+.order
+{
+    width: 430px;
+    background: #FAFAFA;
+    border: #e5e5e5 solid 2px;
+    margin: 10px 0px 0px 30px;   
+}
+
+.order-title
+{
+    height: 50px;
+    width: 230px;
+    background-color: #FA6400;
+    color: #FFFFFF;
+    border-radius: 0px 0px 50px 0px;
+    padding: 10px;
+}
+
+.order-items
+{
+    display: flex;
+    margin: 10px 0px 10px 20px ;
+    padding-top: 20px;
+}
+
+.quantity
+{
+    font-size: 30px;
+    margin-top: 30px;
+}
+.order-item-info
+{
+    width: 200px;
+    margin-left: 30px;
+}
+
+.order-item-img img
+{
+    width: 120px;
+}
+.add-sub i
+{
+    color: #FA6400;
+    margin:10px 15px 0px 0px;
+}
+.delete-item i
+{
+    margin: 20px;
+    font-size: 20px;
+    transition: 0.3s
+}
+
+.delete-item i:hover
+{
+    color: red;
+}
+
+.order-total
+{
+    height: 180px;
+    margin-top: 80px;
+    border-top: #FA6400 solid 2px;
+}
+.order-total-quantity
+{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.order-total-quantity h3
+{
+    padding-left: 130px;
+}
+
+.item-sale
+{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.item-sale h3
+{
+    padding-left: 180px;
+}
+
+.items-total
+{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.items-total h3
+{
+    padding-left: 90px;
+}
+
+.buy-now-btn
+{
+    background: #FA6400;
+    color: white;
+    width: 115px;
+    padding: 7px 10px 7px 15px;
+    border-radius: 20px;
+    margin:10px 0px 10px 290px;
+    transition: .3s;
+}
+
+.buy-now-btn:hover
+{
+    background: white;
+    border: #FA6400 solid 2px;
+    color: #FA6400;
+}
+
+
+/* =========================  END-GRID  ========================= */
+
+/* =========================  START-FOOTER  ========================= */
+
+footer
+{
+    border: #e5e5e5 solid 2px;
+    margin-top: 50px;
+}
+.top-footer
+{
+    background: #FAFAFA;
+    display: flex;
+    padding: 20px 0px 10px 10px
+}
+
+.top-footer h1
+{
+    font-size: 30px;
+    font-weight: 600;
+    color: #FA6400;
+    margin: 9px 0px 0px 10px;
+}
+.bottom-footer 
+{
+    height: 90px;
+    background-color: #FA6400;
+}

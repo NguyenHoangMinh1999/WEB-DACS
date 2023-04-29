@@ -13,6 +13,7 @@
 {
     background: linear-gradient(91.24deg, #FA6400 0%, #FF8A00 100%);
     display: flex;
+    
 }
 
 .logo
@@ -43,6 +44,44 @@
 {
     color: brown;
 }
+
+
+
+
+
+.chooses-info ul
+{
+    display: flex;
+}
+
+.type ul 
+{
+    display: list-item;  
+    position: absolute;
+    margin-left: 30px;
+    color: #FAFAFA;
+    
+}
+.type ul li
+{
+    position: relative;
+    visibility: hidden;
+    background-color: #FA6400;
+    color: #FAFAFA;
+    
+}
+.type ul:hover > li
+{
+    visibility: visible;
+    z-index: 1;
+}
+.chooses-info ul li
+{
+    position: flex;
+    margin: 0px;
+}
+
+
 
 .search-bar
 {

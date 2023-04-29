@@ -1,0 +1,250 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+/* =========================  START-HEADER  ========================= */
+
+.top-header
+{
+    background: linear-gradient(91.24deg, #FA6400 0%, #FF8A00 100%);
+    display: flex;
+}
+
+.logo
+{
+    padding: 10px 0px 0px 10px;
+}
+
+.logo img
+{
+    width: 70%;
+}
+
+.chooses ul
+{
+    display: flex;
+    padding: 15px 0px 10px 0px;
+}
+
+.chooses li a
+{
+    font-size: 20px;
+    margin-right: 20px;
+    color: white;
+    transition: 0.3s;
+}
+
+.chooses li a:hover
+{
+    color: brown;
+}
+
+.search-bar
+{
+    width: 600px;
+    height: 35px;
+    display: flex;
+    cursor: pointer;
+    margin: 13px 0px 0px 50px;
+    padding: 10px 20px;
+    background:#FFFFFF;
+    border-radius: 30px;
+    align-items: center;
+    /* box-shadow: 0 10px 25px rgba(0,0,0,0.3); */
+}
+
+.search-bar input
+{
+    width: 550px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+}
+
+.search-bar i
+{
+    color: brown;
+    font-size: 20px;
+    padding: 5px 0px 5px 0px;
+}
+
+.others
+{
+    display: flex;
+    padding: 15px 0px 15px 120px ;
+}
+
+.others a i
+{
+    font-size: 30px;
+    margin-left: 20px;
+    color: white;
+    transition: 0.3s;
+}
+
+.others a i:hover
+{
+    color: brown;
+}
+
+.bottom-header
+{
+    left: 0;
+    display: flex;
+}
+
+
+.back a
+{
+    position: absolute;
+    font-size: 60px;
+    color: white;
+    transition: 0.3s;
+}
+.back a:hover
+{
+    color: #FA6400;
+
+}
+.shop
+{
+    display: list-item;
+}
+.price-btn
+{
+    background: #FA6400;
+    color: white;
+    width: 170px;
+    padding: 7px 10px 7px 15px;
+    border-radius: 20px;
+    margin:10px 0px 10px 290px;
+    transition: .3s;
+}
+
+.price-btn:hover
+{
+    background: white;
+    border: #FA6400 solid 2px;
+    color: #FA6400;
+}
+.cart-btn
+{
+    background: #FA6400;
+    color: white;
+    width: 180px;
+    padding: 7px 10px 7px 15px;
+    border-radius: 20px;
+    margin:10px 0px 10px 290px;
+    transition: .3s;
+}
+
+.cart-btn:hover
+{
+    background: white;
+    border: #FA6400 solid 2px;
+    color: #FA6400;
+}
+
+/* =========================  END-HEADER  ========================= */
+/* =========================  START-OPTION  ========================= */
+.item
+{
+    background-color: #ECECEC;
+    margin: 30px;
+}
+.food-option-list
+{
+    display: flex;
+}
+.food-option
+{
+    margin-left: 90px;
+}
+.food-option-detail
+{
+    border-bottom: 1px solid #A1A1A1;
+    width: 400px;
+}
+.option ul li
+{
+    border-bottom: 1px solid #A1A1A1;
+    list-style: none;
+    display: list-item;
+}
+.choice
+{
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+
+.minus, .plus
+{
+			width:20px;
+			height:20px;
+			background:#f2f2f2;
+			border-radius:4px;
+			padding:-5px 5px -5px 5px;
+			border:1px solid #ddd;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+		}
+        .text .input
+        {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+			border:1px solid #ddd;
+			border-radius:4px;
+            display: inline-block;
+            width: 30px;
+        }
+.plus-minus
+{
+    display: flex;
+}
+/* =========================  END-OPTION  ========================= */
+/* =========================  START-NOTE  ========================= */
+.note
+{
+    display: flex;
+    background-color: #ECECEC;
+    width: 100px;
+    height: 200px;
+}
+.text
+{
+    background-color: #ddd;
+    text-decoration-color: black;
+}
+/* =========================  END-NOTE  ========================= */
+		
+			
+
+
+.shop-img img
+{
+    width: 700px;
+    height: 400px;
+}
+
+/* =========================  END-OPTION  ========================= */
+/* =========================  START-FOOD-INFO  ========================= */
+.food-coupon
+{
+    display: flex;
+    margin: 5px 0px 0px 20px;
+}
+.food-coupon h5
+{
+    padding: 7px 0px 0px 10px;
+}
+
+/* =========================  END-FOOD-INFO  ========================= */

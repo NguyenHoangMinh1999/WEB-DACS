@@ -14,23 +14,19 @@
     background: linear-gradient(91.24deg, #FA6400 0%, #FF8A00 100%);
     display: flex;
 }
-
 .logo
 {
     padding: 10px 0px 0px 10px;
 }
-
 .logo img
 {
     width: 70%;
 }
-
 .chooses ul
 {
     display: flex;
     padding: 15px 0px 10px 0px;
 }
-
 .chooses li a
 {
     font-size: 20px;
@@ -38,45 +34,66 @@
     color: white;
     transition: 0.3s;
 }
-
 .chooses li a:hover
 {
     color: brown;
 }
 
-.search-bar
-{
-    width: 600px;
-    height: 35px;
-    display: flex;
-    cursor: pointer;
-    margin: 13px 0px 0px 50px;
-    padding: 10px 20px;
-    background:#FFFFFF;
-    border-radius: 30px;
-    align-items: center;
-    /* box-shadow: 0 10px 25px rgba(0,0,0,0.3); */
-}
-
-.search-bar input
-{
-    width: 550px;
-    outline: none;
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    font-size: 16px;
     border: none;
-    font-size: 15px;
-}
-
-.search-bar i
+    cursor: pointer;
+    width: 100px;
+  }
+  
+  .dropdown 
+  {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content 
+  {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a 
+  {
+    color: black;
+    border-bottom: #FA6400 1px solid;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content img
+  {
+    width: 35px;
+    height: 20px;
+    padding: 0px 0px 0px 5px;
+    margin-right: 5px;
+  }
+  
+  .dropdown-content a:hover 
 {
-    color: brown;
-    font-size: 20px;
-    padding: 5px 0px 5px 0px;
+    background-color: #f1f1f1
 }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
 .others
 {
     display: flex;
     padding: 15px 0px 15px 120px ;
+    margin-left: 500px;
 }
 
 .others a i
@@ -86,20 +103,17 @@
     color: white;
     transition: 0.3s;
 }
-
 .others a i:hover
 {
     color: brown;
 }
-
 .bottom-header
 {
     left: 0;
     display: flex;
 }
-
-
-
+/* =========================  END-HEADER  ========================= */
+/* =========================  START-SHOP-INFO  ========================= */
 .banner img
 {
     height: 400px;
@@ -107,7 +121,6 @@
     margin: 30px 0px 0px 60px;
     border-radius: 30px;
 }
-
 .store-info 
 {
     margin-left:20px;
@@ -125,11 +138,29 @@
 .store-time{
     font-size: 20px;
 }
-
 .store-info a
 {
     color: black;
 }
+.fav-btn
+{
+    background: #FA6400;
+    font-size: 30px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin-top: 90px;
+    border-radius: 20px;
+    transition: .3s;
+    text-align: center;
+}
+.fav-btn:hover
+{
+    background: white;
+    border: #FA6400 solid 2px;
+    color: #FA6400;
+}
+/* =========================  END-SHOP-INFO  ========================= */
 
 .coupons-head-title
 {
@@ -140,22 +171,18 @@
     color: #FFFFFF;
     border-radius: 50px 0px 0px 50px;
 }
-/* =========================  END-HEADER  ========================= */
 /* =========================  START-COUPON  ========================= */
 .container
 {
     width: 1000px;
     height: 400px;
     margin: 20px 80px;
-
 }
-
 .list
 {
     display: grid;
     grid-template-columns: 200px 200px ;
 }
-
 .shop-coupons
 {
     text-align: center;
@@ -181,7 +208,6 @@
     align-items: center;
     margin-left: 105px;
 }
-
 .chooses-info a
 {
     margin-left: 40px;
@@ -189,18 +215,15 @@
     color: #FA6400;
     transition: 0.3s;
 }
-
 .chooses-info i
 {
     width: 30px;
     text-align: center;
 }
-
 .chooses-info a:hover
 {
     color: brown;
 }
-
 .divide
 {
     width: 88%;
@@ -218,14 +241,12 @@
     margin: 20px 80px;
     display: flex;
 }
-
 .list-2
 {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto;
 }
-
 .item
 {
     text-align: center;
@@ -235,43 +256,36 @@
     margin: 10px 5px 10px 5px;
     transition: 0.3s;
 }
-
 .item-add
 {
     margin-left: 160px;
     transition: 0.3s;
 }
-
 .item-add i
 {
     color: #FA6400;
     font-size: 20px;
     transition: .3s;
-
 }
 .item-add:hover i
 {
     color: #3866C0;
 }
-
 .pizza-img img
 {
     height: 150px;
     width: 200px;
 }
-
 .item-info-coupon
 {
     display: flex;
     margin: 5px 0px 0px 20px;
 }
-
 .item-info-coupon h5
 {
     padding: 7px 0px 0px 10px;
 }
 /* =========================  START-GRID  ========================= */
-
 .order
 {
     width: 430px;
@@ -279,7 +293,6 @@
     border: #e5e5e5 solid 2px;
     margin: 10px 0px 0px 30px;   
 }
-
 .order-title
 {
     height: 50px;
@@ -289,14 +302,12 @@
     border-radius: 0px 0px 50px 0px;
     padding: 10px;
 }
-
 .order-items
 {
     display: flex;
     margin: 10px 0px 10px 20px ;
     padding-top: 20px;
 }
-
 .quantity
 {
     font-size: 30px;
@@ -307,7 +318,6 @@
     width: 200px;
     margin-left: 30px;
 }
-
 .order-item-img img
 {
     width: 120px;
@@ -388,12 +398,41 @@
     border: #FA6400 solid 2px;
     color: #FA6400;
 }
-
-
 /* =========================  END-GRID  ========================= */
-
+/* =========================  START-COMMENTS  ========================= */
+.comments
+{
+    background-color: #EAEAEA;
+}
+.comment-title
+{
+    height: 50px;
+    width: 270px;
+    background-color: #FA6400;
+    color: #FFFFFF;
+    border-radius: 0px 0px 50px 0px;
+    padding: 10px;
+    border: white 3px solid;
+}
+.name
+{
+    color: #FA6400;
+    margin-left: 20px;
+}
+.star
+{
+    margin-left: 20px;
+}
+.comment
+{
+    border-bottom: lightgray 1px solid;
+}
+.content
+{
+    margin-left: 20px;
+}
+/* =========================  END-COMMENTS  ========================= */
 /* =========================  START-FOOTER  ========================= */
-
 footer
 {
     border: #e5e5e5 solid 2px;
@@ -405,7 +444,6 @@ footer
     display: flex;
     padding: 20px 0px 10px 10px
 }
-
 .top-footer h1
 {
     font-size: 30px;

@@ -108,13 +108,9 @@
 }
 
 /* =========================  END-HEADER  ========================= */
-/* =========================  START-GRID  ========================= */
-.order
-{
-    width: 500px;
-    margin: 10px 0px 0px 10px;   
-}
-.order-title
+/* =========================  END-HEADER  ========================= */
+
+.fav-title
 {
     height: 50px;
     width: 300px;
@@ -123,8 +119,8 @@
     border-radius: 0px 0px 50px 0px;
     padding: 10px;
     display: flex;
+    margin-top: 10px;
 }
-
 .back a
 {
     font-size: 20px;
@@ -138,98 +134,87 @@
 {
     color: brown;
 }
-.order-items
+
+.container
+{
+    width: 1000px;
+    margin: 20px 80px;
+}
+.list
+{
+    display: grid;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 150px 150px 150px;
+}
+.item
 {
     display: flex;
-    margin: 10px 0px 10px 20px ;
-    padding-top: 20px;
+    position: relative;
+    background-color: #FAFAFA;
+    border: #FA6400 solid 2px;
+    padding: 10px;
+    width: 550px;
+    height: 122px;
+    transition: 0.3s;
 }
-.quantity
+.img img
 {
-    font-size: 30px;
-    margin-top: 30px;
+    width: 180px;
+    height: 100px;
 }
-.order-item-info
+.name-store
 {
-    width: 200px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
-.order-item-img img
+.name-store h5
 {
-    width: 120px;
+    color: gray;
 }
-.add-sub i
+.detail
 {
-    color: #FA6400;
-    margin:10px 15px 0px 0px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.detail a
+{
+    color: black;
+    font-size: 15px;
+}
+.detail img
+{
+    width: 20px;
+    height: 20px;
 }
 .delete-item i
 {
-    margin: 20px;
+    margin-top: 35px;
+    margin-left: 60px;
     font-size: 20px;
     transition: 0.3s
 }
-
 .delete-item i:hover
 {
     color: red;
 }
 
-.order-total
-{
-    height: 180px;
-    margin-top: 80px;
-    border-top: #FA6400 solid 2px;
-}
-.order-total-quantity
-{
-    display: flex;
-    margin: 10px;
-    justify-content: space-between;
-}
-
-.order-total-quantity h3
-{
-    padding-left: 130px;
-}
-
-.item-sale
-{
-    display: flex;
-    margin: 10px;
-    justify-content: space-between;
-}
-
-.item-sale h3
-{
-    padding-left: 180px;
-}
-
-.items-total
-{
-    display: flex;
-    margin: 10px;
-    justify-content: space-between;
-}
-
-.items-total h3
-{
-    padding-left: 90px;
-}
-.delete-account-btn
+.add-btn
 {
     background: #FA6400;
     color: white;
-    width: fit-content;
+    width: 180px;
     padding: 7px 10px 7px 15px;
     border-radius: 20px;
-    margin:10px 0px 10px 290px;
+    margin:10px 0px 10px 100px;
     transition: .3s;
 }
-.delete-account-btn:hover
+.add-btn:hover
 {
     background: white;
     border: #FA6400 solid 2px;
     color: #FA6400;
 }
-/* =========================  END-GRID  ========================= */
+.add a:hover
+{
+    color: #FA6400;
+}
+

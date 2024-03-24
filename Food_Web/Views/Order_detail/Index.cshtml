@@ -1,0 +1,247 @@
+﻿@*@model IEnumerable<Food_Web.Models.Order_detail>*@
+@model PagedList.IPagedList<Food_Web.Models.Order_detail>
+@using PagedList.Mvc
+
+@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@using Food_Web.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //IdentityDbContext context = new IdentityDbContext();
+    //var listUser = context.Users.ToList();
+    var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+    var listUser = userManager.Users.ToList();
+
+}
+
+
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Đơn Hàng</h2>
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a href="home.html">Home</a>
+                </li>
+                <li class="is-marked">
+                    <a href="wishlist.html">Thông Tin Đơn Hàng </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="page-wishlist u-s-p-t-80">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Products-List-Wrapper -->
+                <div class="table-wrapper u-s-m-b-60">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Stt</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td class="border">
+                                        @Html.DisplayFor(modelItem => item.Od_id)
+                                    </td>
+                                    <td>
+                                        <div class="cart-anchor-image">
+                                            @foreach (var u in listUser)
+                                            {
+                                                if (u.Id == item.Order.Od_name)
+                                                {
+                                                    <span id="username">@u.Fullname</span>
+                                                    <span id="Sdt" style="display: none;">@u.PhoneNumber</span>
+                                                    <span id="adress" style="display: none;">@u.Adress</span>
+                                                    break;
+                                                }
+                                                else { continue; }
+                                            }
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart-price">
+                                            @Html.DisplayFor(modelItem => item.Order.Od_date)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm btn-view-details" data-id="@item.Od_id" data-bs-toggle="modal" data-bs-target="#detailsModal">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="pagination-container">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, PageNumber = page }))
+</div>
+
+
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsModalLabel">Chi Tiết Hóa Đơn</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="orderDetailsContainer"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+$(document).ready(function () {
+  $(".btn-view-details").on("click", function () {
+    var button = $(this);
+    var orderId = button.data("id");
+    var username = button.closest("tr").find("#username").text();
+    var phone = button.closest("tr").find("#Sdt").text();
+    var Diachi = button.closest("tr").find("#adress").text();
+    $.ajax({
+      url: '@Url.Action("GetOrderDetails", "Order_details")',
+      type: 'POST',
+      data: { orderId: orderId },
+      success: function (result) {
+        if (result.success) {
+          var orderDetails = result.orderDetails;
+          var orderDetailsContainer = $("#orderDetailsContainer");
+          orderDetailsContainer.empty();
+          orderDetailsContainer.append("<p> Tên NGười mua: " + username + "</p>");
+          orderDetailsContainer.append("<p> Số Điện Thoại: " + phone + "</p>");
+          orderDetailsContainer.append("<p> Địa Chỉ: " + Diachi + "</p>");
+
+          if (orderDetails.length > 0) {
+            var totalCost = 0;
+            var orderList = $("<ul>").appendTo(orderDetailsContainer); // Create <ul> element
+
+            orderList.append(" ============ Sản Phẩm Mua =============== "); // Add heading
+
+              orderDetails.forEach(function (orderDetail) {
+                  var trangThaiText = 'Trạng Thái: ';
+                  if (orderDetail.Status === false) {
+                      trangThaiText += 'Chưa giao';
+                  } else if (orderDetail.Status === true) {
+                      trangThaiText += 'Đang giao';
+                  } else {
+                      trangThaiText += 'Unknown';
+                  }
+              var listItem = "<li>" +
+                  "<strong>Tên: </strong>" + orderDetail.productName + "<br/>" +
+                "Giá: " + orderDetail.Gia + "<br/>" +
+                  "Số lượng: " + orderDetail.soluong + "<br/>" +
+                  " Tổng Tiền của Sản Phẩm: " + orderDetail.quantity + "<br/>" +
+                  trangThaiText  +
+                "</li>";
+              orderList.append(listItem); // Append the list item to the <ul>
+
+              totalCost += orderDetail.quantity;
+            });
+
+            orderDetailsContainer.append("<p> => Total Cost: " + totalCost + "</p>");
+          } else {
+            orderDetailsContainer.html("No order details found.");
+          }
+
+          $("#detailsModalLabel").html("Chi Tiết Hóa Đơn");
+        } else {
+          alert(result.message);
+        }
+      },
+      error: function () {
+        alert('An error occurred while fetching order details.');
+      }
+    });
+  });
+});
+
+
+</script>
+
+<style>
+    .border {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .modal-backdrop.fade.show {
+        display: none;
+    }
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+        .pagination-container a {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+            .pagination-container a.active {
+                background-color: #333;
+                color: #fff;
+            }
+
+            .pagination-container a:first-child {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-left: none;
+            }
+
+            .pagination-container a:last-child {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-right: none;
+            }
+
+            .pagination-container a:first-child.active {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-left: none;
+            }
+
+            .pagination-container a:last-child.active {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-right: none;
+            }
+</style>
+
+

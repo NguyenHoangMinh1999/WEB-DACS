@@ -1,0 +1,348 @@
+﻿@model IEnumerable<Food_Web.Models.Product>
+@using System.Resources
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = null;
+}
+
+
+<!-- Main-Slider -->
+<div class="default-height ph-item">
+    <div class="slider-main owl-carousel">
+        <div class="bg-image one" style="background-image: url('../../content/bank2.jpg');">
+            <div class="slide-content slide-animation">
+                <h1>Món Ngon Mỗi Ngày</h1>
+                @*<h2>lifestyle / clothing / hype</h2>*@
+            </div>
+        </div>
+        <div class="bg-image two" style="background-image: url('../../Content/bank2.jpg');">
+            <div class="slide-content-2 slide-animation">
+                <h2 class="slide-2-h2-a">Hôm Nay</h2>
+                <h2 class="slide-2-h2-b">Có Gì</h2>
+            </div>
+        </div>
+
+        <div class="bg-image three" style="background-image: url('../../Content/bank1.jpg');">
+            <div class="slide-content slide-animation">
+                <h1>
+                    Tech
+                    <span style="color:#333">Siêu</span>
+                </h1>
+                <h2 style="color:#333">Hời</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="section-maker">
+    <div class="container">
+        <div class="sec-maker-header text-center">
+            <h3 class="sec-maker-h3">@Resources.RS_HC</h3>
+            <ul class="nav tab-nav-style-1-a justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#men-latest-products" id="btnAllProducts">@Resources.RS_New</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#men-best-selling-products" id="btnBestSell">@Resources.RS__Deals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#men-top-rating-products" id="btnhot">
+
+                        @Resources.RS__Exclusive
+                    </a>
+                </li>
+                @*<li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#men-featured-products">Featured Products</a>
+                    </li>*@
+            </ul>
+        </div>
+        <div class="wrapper-content">
+            <div class="tab-pane fade active show" id="men-latest-products">
+                <div>@Html.Action("Index", "Home")</div>
+            </div>
+            <div class="tab-pane fade" id="men-best-selling-products">
+                <div>@Html.Action("bestsell", "Home")</div>
+            </div>
+            <div class="tab-pane fade" id="men-top-rating-products">
+                <div>@Html.Action("hot", "Home")</div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="section-maker">
+    <div class="container">
+        <div class="sec-maker-header text-center">
+
+            <h3 class="sec-maker-h3 u-s-m-b-22">Hot Deals</h3>
+            @*<span class="sec-maker-span-text">Ends in</span>*@
+            <!-- Timing-Box -->
+            <div class="section-timing-wrapper dynamic">
+                <span class="fictitious-seconds" style="display:none;">18000</span>
+                <div class="section-box-wrapper box-days">
+                    <div class="section-box">
+                        <span class="section-key">120</span>
+                        <span class="section-value">Days</span>
+                    </div>
+                </div>
+                <div class="section-box-wrapper box-hrs">
+                    <div class="section-box">
+                        <span class="section-key">54</span>
+                        <span class="section-value">HRS</span>
+                    </div>
+                </div>
+                <div class="section-box-wrapper box-mins">
+                    <div class="section-box">
+                        <span class="section-key">3</span>
+                        <span class="section-value">MINS</span>
+                    </div>
+                </div>
+                <div class="section-box-wrapper box-secs">
+                    <div class="section-box">
+                        <span class="section-key">32</span>
+                        <span class="section-value">SEC</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Timing-Box /- -->
+        </div>
+        <!-- Carousel -->
+        <div class="slider-fouc">
+            <div class="products-slider owl-carousel" data-item="4">
+                @Html.Action("Showhot", "Home")
+
+            </div>
+        </div>
+        <!-- Carousel /- -->
+    </div>
+</section>
+
+
+
+<!-- Mobiles-&-Tablets /- -->
+<!-- Consumer-Electronics --
+<!-- Consumer-Electronics /- -->
+<!-- Books-&-Audible -->
+@*<section class="section-maker">
+    <div class="container">
+        <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
+            <a class="redirect-link" href="store-directory.html">
+                <span>View more on this category</span>
+            </a>
+        </div>
+    </div>
+</section>*@
+<!-- Books-&-Audible /- -->
+<!-- Continue-Link -->
+<!--<div class="continue-link-wrapper u-s-p-b-80">
+    <a class="continue-link" href="store-directory.html" title="View all products on site">
+        <i class="ion ion-ios-more"></i>
+    </a>
+</div>-->
+<!-- Continue-Link /- -->
+<!-- Brand-Slider -->
+<!--<div class="brand-slider-content owl-carousel" data-item="5">
+<div class="brand-slider u-s-p-b-80">
+    <div class="container">
+          @*@Html.Action("categoryindex", "Home")*@
+        </div>
+    </div>
+</div>-->
+<!-- Brand-Slider /- -->
+<!-- Site-Priorities -->
+@*<section class="app-priority">
+    <div class="container">
+        <div class="priority-wrapper u-s-p-b-80">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="single-item-wrapper">
+                        <div class="single-item-icon">
+                            <i class="ion ion-md-star"></i>
+                        </div>
+                        <h2>
+                            Great Value
+                        </h2>
+                        <p>We offer competitive prices on our 100 million plus product range</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="single-item-wrapper">
+                        <div class="single-item-icon">
+                            <i class="ion ion-md-cash"></i>
+                        </div>
+                        <h2>
+                            Shop with Confidence
+                        </h2>
+                        <p>Our Protection covers your purchase from click to delivery</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="single-item-wrapper">
+                        <div class="single-item-icon">
+                            <i class="ion ion-ios-card"></i>
+                        </div>
+                        <h2>
+                            Safe Payment
+                        </h2>
+                        <p>Pay with the world’s most popular and secure payment methods</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="single-item-wrapper">
+                        <div class="single-item-icon">
+                            <i class="ion ion-md-contacts"></i>
+                        </div>
+                        <h2>
+                            24/7 Help Center
+                        </h2>
+                        <p>Round-the-clock assistance for a smooth shopping experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
+<style>
+    /* Ẩn tất cả các tab-pane */
+    .tab-pane {
+        display: none;
+    }
+
+        /* Hiển thị tab-pane active */
+        .tab-pane.active {
+            display: block;
+        }
+</style>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+@section scripts{
+    <script>
+        $(document).ready(function () { });
+        $(".menu-tab-wp li").click(function () {
+            var categoryID = $(this).attr("data-filter");
+            $.ajax({
+                url: '/Product/GetProductByCategory',
+                type: "GET",
+                data: { "categoryid": categoryID },
+                success: function (result) {
+                    $('.menu-list-row').html(result);
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        });
+
+        $(".menu-tab-wp li").click(function () {
+            var categoryID = $(this).attr("data-filter");
+            $.ajax({
+                url: '/Product/GetProductByCategory',
+                type: "GET",
+                data: { "categoryid": categoryID },
+                success: function (result) {
+                    $('.menu-list-row').html(result);
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        });
+
+        var i = 0;
+        $(document).on('click', '.dish-add-btn', function () {
+            var ProductID = $(this).data("id");
+            //alert(ProductID);
+            $.ajax({
+                url: '/ShoppingCart/AddToCart',
+                type: 'POST',
+                data: { "id": ProductID },
+                success: function (result) {
+                    console.log('main' + i++);
+                    swal({
+                        title: "Good job!",
+                        text: "You clicked the button!",
+                        icon: "success",
+                    });
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        });
+
+        $('.item-addwishlist').click(function () {
+            alert('them thanh cong');
+            var productId = $(this).data("id");/*$(this).closest('.dish-box-wp').find('.dish-add-btn').data('id');*/
+            $.ajax({
+                url: '/Heart/AddToHeart',
+                method: 'POST',
+                data: { id: productId },
+                success: function (response) {
+                    // xử lý phản hồi từ máy chủ, chẳng hạn như cập nhật số lượng mục ưa thích
+                    $('#favorite-count').text(response.favoriteCount);
+                    swal({
+                        title: "Good job!",
+                        text: "You clicked the button!",
+                        icon: "success",
+                    });
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    // xử lý lỗi, nếu có
+                    console.log('Lỗi khi thêm vào mục ưa thích:', errorThrown);
+                }
+            });
+        });
+
+        // Lắng nghe sự kiện khi click vào tab
+        document.addEventListener('DOMContentLoaded', function () {
+            var tabs = document.querySelectorAll('.nav-link');
+
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    var targetTab = event.target.getAttribute('href');
+
+                    // Ẩn tất cả các tab-pane
+                    var tabPanes = document.querySelectorAll('.tab-pane');
+                    for (var j = 0; j < tabPanes.length; j++) {
+                        tabPanes[j].classList.remove('active');
+                    }
+
+                    // Hiển thị tab-pane được chọn
+                    document.querySelector(targetTab).classList.add('active');
+                });
+            }
+        });
+
+        var i = 0;
+        $(document).on('click', '.item-addCart', function () {
+            alert("ocke");
+            var ProductID = $(this).data("id");
+            //alert(ProductID);
+            $.ajax({
+                url: '/ShoppingCart/AddToCart',
+                type: 'POST',
+                data: { "id": ProductID },
+                success: function (result) {
+                    console.log('main' + i++);
+                    swal({
+                        title: "Good job!",
+                        text: "You clicked the button!",
+                        icon: "success",
+                    });
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        });
+
+
+    </script>
+}
